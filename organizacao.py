@@ -56,7 +56,7 @@ def organizar_pastas(diretorio):
     pastas = get_diretorios_pastas(diretorio_absoluto_raiz)
 
     for arquivo in list_arquivos:
-        if not identificar_diretorio(arquivo):
+        if not identificar_diretorio(os.path.join(diretorio,arquivo)):
             extensao = get_extensao_arquivo(arquivo)
             if extensao in AUDIO_EXT:
                 mover_arquivo(arquivo,diretorio,pastas[0])
